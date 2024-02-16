@@ -38,8 +38,11 @@
 using System.Globalization;
 
 System.Console.WriteLine("Por favor Digite seu nome, sexo, idade, e altura separados por virgula, obrigado!");
+string vl = Console.ReadLine();
 
-string[] v = Console.ReadLine().Split(',');
+if (vl != null) {
+
+string[] v = vl.Split(',');
 string nome = v[0].Trim();
 char sexo = char.Parse(v[1].Trim());
 int idade = int.Parse(v[2].Trim());
@@ -49,4 +52,8 @@ System.Console.WriteLine(nome);
 System.Console.WriteLine(idade);
 System.Console.WriteLine(altura.ToString("F2", CultureInfo.InvariantCulture));
 System.Console.WriteLine(sexo);
+} else {
+    System.Console.WriteLine("valores invalidos");
+}
+
 
